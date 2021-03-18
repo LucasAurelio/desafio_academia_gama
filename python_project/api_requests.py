@@ -1,11 +1,10 @@
 import requests
 
 
-def get_data_from_api(endpoint):
-
+def get_response(endpoint):
     try:
-        response_country = requests.get(endpoint, timeout=6000).json()
-        return response_country
+        endpoint_response = requests.get(endpoint, timeout=6000).json()
+        return endpoint_response
 
     except requests.exceptions.HTTPError as errh:
         print(errh)
@@ -17,3 +16,7 @@ def get_data_from_api(endpoint):
         print(errt)
     except requests.exceptions.RequestException as err:
         print(err)
+
+
+def main_endpoint():
+    pass
